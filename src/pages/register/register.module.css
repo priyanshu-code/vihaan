@@ -1,0 +1,59 @@
+.regContainer {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  max-width: 400px;
+  padding: 30px;
+}
+
+.regHead {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.regFrom {
+  display: flex;
+  flex-direction: column;
+}
+
+.regLabel {
+  color: #666;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.regInput {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.regButton[type="submit"] {
+  background-color: #007bff;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.regButton[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.areg {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.areg:hover {
+  text-decoration: underline;
+}
