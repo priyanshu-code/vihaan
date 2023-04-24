@@ -49,7 +49,7 @@ export default function Login() {
               Login
             </button>
             <div className={styles.registerContainer}>
-              <p>Don't have an Accunt</p>
+              <p>Don't have an Account</p>
               <Link className={styles.aLogin} href="/register">
                 Register here
               </Link>
