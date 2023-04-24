@@ -1,0 +1,121 @@
+.navMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4rem;
+  min-width: 100%;
+  padding-top: 1.2rem;
+}
+.navLogout {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  margin: 3rem 2rem;
+}
+.navLogout:hover {
+  border-bottom: 2px solid cyan;
+}
+.navMainIcon {
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+}
+.navMainLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  margin: 0px;
+  padding: 0px;
+  animation: navItems 0.3s linear;
+}
+@keyframes navItems {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+.navMainLinks > li {
+  text-align: center;
+  list-style: none;
+}
+
+.navMainLinksLink {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+  margin: 3rem 2rem;
+}
+.navMainLinksLink:hover {
+  border-bottom: 2px solid cyan;
+}
+.navMainToggle {
+  display: none;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 4rem;
+  color: black;
+}
+.navMainDarkmode {
+  cursor: pointer;
+  height: 2rem;
+  width: 4rem;
+  color: black;
+}
+@media only screen and (max-width: 690px) {
+  .navMain {
+    align-items: flex-start;
+  }
+  .navMainIcon {
+    cursor: pointer;
+    height: 3rem;
+  }
+  .navMainLinks {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 0px;
+    transition: height 0.4s;
+  }
+  .navOpen {
+    height: 8.5rem;
+  }
+  .navMainLinks > li {
+    text-align: center;
+    list-style: none;
+    margin-top: 0.35rem;
+  }
+  .navMainLinksLink {
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+  }
+  .navMainLinksLink:hover {
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    color: teal;
+  }
+  .navMainButtons {
+    padding: 5px 0 0 0;
+    align-items: center;
+    display: flex;
+  }
+  .navMainToggle {
+    display: block;
+    margin: 0px;
+    width: 2rem;
+  }
+  .navMainDarkmode {
+    height: 1.5rem;
+    width: 2rem;
+    margin: 0 0.5rem;
+  }
+}
