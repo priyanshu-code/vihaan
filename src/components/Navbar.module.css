@@ -4,7 +4,8 @@
   align-items: center;
   min-height: 4rem;
   min-width: 100%;
-  padding-top: 1.2rem;
+  padding: 2.5rem;
+  background-color: black;
 }
 .navLogout {
   outline: none;
@@ -16,7 +17,7 @@
   margin: 3rem 2rem;
 }
 .navLogout:hover {
-  border-bottom: 2px solid cyan;
+  border-bottom: 2px solid rgb(255, 0, 0);
 }
 .navMainIcon {
   cursor: pointer;
@@ -53,7 +54,7 @@
   margin: 3rem 2rem;
 }
 .navMainLinksLink:hover {
-  border-bottom: 2px solid cyan;
+  border-bottom: 2px solid rgb(255, 0, 0);
 }
 .navMainToggle {
   display: none;

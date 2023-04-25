@@ -13,8 +13,12 @@ export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser(form));
-    router.push("/dashboard");
+    try {
+      dispatch(loginUser(form));
+      router.push("/dashboard");
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +27,7 @@ export default function Login() {
     });
   };
   if (isAuth) {
-    router.push("/");
+    router.push("/dashboard");
     return <></>;
   }
   return (
