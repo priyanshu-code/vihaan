@@ -37,13 +37,29 @@ export default function Login() {
           <h1 className={styles.loginHead}>Login</h1>
           <form className={styles.loginFrom}>
             <div className={styles.inputBox}>
-              <input className={styles.loginInput} type="email" id="email" name="email" value={form.email} onChange={handleChange} required />
+              <input
+                className={styles.loginInput}
+                type="email"
+                id="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
               <label className={styles.loginLabel} htmlFor="email">
                 Email
               </label>
             </div>
             <div className={styles.inputBox}>
-              <input className={styles.loginInput} type="password" id="password" name="password" value={form.password} onChange={handleChange} required />
+              <input
+                className={styles.loginInput}
+                type="password"
+                id="password"
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
               <label className={styles.loginLabel} htmlFor="password">
                 Password
               </label>
@@ -53,7 +69,7 @@ export default function Login() {
               Login
             </button>
             <div className={styles.registerContainer}>
-              <p>Don't have an Accunt</p>
+              <p>Don't have an Account</p>
               <Link className={styles.aLogin} href="/register">
                 Register here
               </Link>

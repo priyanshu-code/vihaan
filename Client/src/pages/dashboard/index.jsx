@@ -2,12 +2,14 @@ import s from "./dashboard.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { logoutUser } from "@/features/user/userSlice";
+import Loading from "@/components/Loading/Loading";
 import axios from "axios";
 import im from "./TEST.jpg";
 import { useState } from "react";
 
 export default function Dashboard() {
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState("");
   const formData = new FormData();
   const router = useRouter();
   const [patientName, setPatientName] = useState("");
@@ -24,18 +26,26 @@ export default function Dashboard() {
     formData.append("patientName", patientName);
     formData.append("picture", file);
     try {
-      const response = await axios.post("http://localhost:5000/api/v1/patient", formData, {
+      setLoading(true);
+      const res = await axios.post("http://localhost:5000/api/v1/patient", formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(response);
       formData.delete("patientName");
       formData.delete("picture");
+      const temp = await res.data.result.split("/n");
+      setLoading(false);
+      setResponse(temp[temp.length - 1]);
+      console.log(temp[temp.length - 1]);
     } catch (error) {
+      setLoading(false);
       console.log(error.response);
     }
   };
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <main className={s.dashboard}>
       <h1 className={s.dashName}>{`Hi  ${user.firstname} !`}</h1>
@@ -56,10 +66,7 @@ export default function Dashboard() {
           name="patientName"
           placeholder="Patient name"
         ></input>
-        <button>
-          <Image className={s.skeleton} src={im} height={200} width={200}></Image>
-        </button>
-        {/* <label className={s.label} htmlFor="patient">
+        <label className={s.label} htmlFor="patient">
           Patient Image
         </label>
         <input
@@ -70,10 +77,11 @@ export default function Dashboard() {
           onChange={(e) => {
             setFile(e.target.files[0]);
           }}
-        ></input> */}
+        ></input>
         <button className={s.submitButton} onClick={handleSubmit}>
           Submit
         </button>
+        {response !== "" && <h2>{response}</h2>}
       </div>
     </main>
   );

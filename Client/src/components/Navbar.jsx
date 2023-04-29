@@ -12,15 +12,11 @@ export const Navbar = () => {
       {/* <header className={s.navMainHeader}>ProjectX</header> */}
       <ul className={s.navMainLinks}>
         <li>
-          <a className={s.navMainLinksLink} href={"#"}>
-            About
-          </a>
+          <Link className={s.navMainLinksLink} href={"/"}>
+            Home
+          </Link>
         </li>
-        <li>
-          <a className={s.navMainLinksLink} href={"#"}>
-            Contact
-          </a>
-        </li>
+
         <li>
           {isAuth ? (
             <Link

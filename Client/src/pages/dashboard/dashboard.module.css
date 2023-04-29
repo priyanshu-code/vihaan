@@ -82,3 +82,6 @@
 .skeleton {
   cursor: pointer;
 }
+.card {
+  width: 30rem;
+}
